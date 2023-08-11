@@ -1,0 +1,75 @@
+<% layout('layouts/boilerplate.ejs') %>
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+
+                <div class="card-body justify-content-center">
+                    <h1 class="card-title text-center">
+                        New CampGround
+                    </h1>
+                    <form action="/campgrounds" method="POST" novalidate class="validated-form"
+                        enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label class="form-label" for="title">Title</label>
+                            <input class="form-control" type="text" id="title" name="campground[title]" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Title should not be Blank
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="location">Location</label>
+                            <input class="form-control" type="text" id="location" name="campground[location]" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Location should not be Blank
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="price">CampGround Price</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="price-label">₹</span>
+                                <input type="text" id="price" class="form-control" placeholder="0.00"
+                                    aria-label="Username" aria-describedby="price-label" name="campground[price]"
+                                    required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Price should not be Blank
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="description">Description</label>
+                            <textarea class="form-control" type="text" id="description" name="campground[description]"
+                                required></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Description should not be Blank
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image">Upload Images</label>
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" id="image" name="image" multiple>
+                            </div>
+                        </div>
+                        <div class="mb-3 justify-content-center align-items-center">
+                            <button type="submit" class="btn btn-success col-12">Add CampGround</button>
+                        </div>
+                    </form>
+                    <a class="btn btn-primary d-flex align-items-center justify-content-center" href="/campgrounds">Cancel</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
